@@ -40,9 +40,19 @@
       "plugin:vue/essential",
       "eslint:recommended"
     ],
-    "rules": {},
+    "rules": {
+      "no-console": "off"
+    },
     "parserOptions": {
       "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "postcss-preset-env": {
+        "stage": 1
+      },
+      "postcss-apply": {}
     }
   },
   "browserslist": [
