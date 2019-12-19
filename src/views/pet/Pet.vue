@@ -13,6 +13,10 @@ import PetParent from "@/components/PetParent"
 export default {
   name: 'pets',
 
+  data: () => ({
+    type: 'Cat'
+  }),
+
   components: { PetParent },
 
   computed: {
@@ -25,7 +29,7 @@ export default {
 
   methods: {
     getPets () {
-      this.$store.dispatch(FETCH_PETS);
+      this.$store.dispatch(FETCH_PETS, this.type);
     }
   }
 }

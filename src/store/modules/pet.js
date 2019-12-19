@@ -6,14 +6,15 @@ const url = 'http://5c92dbfae7b1a00014078e61.mockapi.io/owners';
 
 const state = {
   isLoading: true,
+  type: '',
   pets: []
 };
 
 const actions = {
-  async [FETCH_PETS] ({ commit }) {
+  async [FETCH_PETS] ({ commit }, param) {
     commit(FETCH_START);
     await ApiService.get(url).then(({ data }) => {
-      commit(FETCH_END, data)
+      commit(FETCH_END, { data, param })
     })
   }
 };
@@ -32,7 +33,7 @@ const getters = {
         if (pet.pets && pet.pets.length) {
           const gender = pet.gender;
           data[gender] = data[gender] || [];
-          data[gender] = [...data[gender], ...pet.pets.filter(p => p.type === 'Cat')];
+          data[gender] = [...data[gender], ...pet.pets.filter(p => p.type === state.type)];
         }
       });
     }
@@ -46,9 +47,10 @@ const mutations = {
     state.isLoading = true;
   },
 
-  [FETCH_END] (state, data) {
+  [FETCH_END] (state, { data, param }) {
     state.isLoading = false;
     state.pets = data;
+    state.type = param;
   }
 };
 

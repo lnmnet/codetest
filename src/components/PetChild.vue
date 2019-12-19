@@ -3,6 +3,7 @@
     <li v-for="(pet, index) in sort(pets)" :key="index">
       <slot name="pet" :pet="pet">{{ pet.name }}</slot>
     </li>
+    <li v-if="!pets.length">--</li>
   </ul>
 </template>
 
