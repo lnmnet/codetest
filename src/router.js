@@ -7,7 +7,8 @@ const router = new Router ({
   mode: 'history',
   routes: [
     { path: '/', redirect: '/pets'},
-    { path: '/pets', component: () => import('@/views/pet/Pet') }
+    { path: '/pets', component: () => import('@/views/pet/Pet') },
+    { path: '/weather', component: () => import('@/views/weather/Weather') }
   ]
 })
 

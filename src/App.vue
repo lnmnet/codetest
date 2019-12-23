@@ -1,9 +1,16 @@
 <template>
-  <div id="app">
-    <router-view />
-  </div>
+  <v-app>
+    <TheHeader />
+    <v-content ><router-view /></v-content>
+  </v-app>
 </template>
 
 <script>
-export default { name: 'app' }
+import TheHeader from "@/components/TheHeader"
+
+export default { 
+  name: 'app',
+
+  components: { TheHeader }
+}
 </script>

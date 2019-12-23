@@ -1,8 +1,10 @@
 <template>
-  <div :class="$style.pet">
-    <h1>Code Test - Pets</h1>
-    <PetParent :items="pets" :isLoading="isLoading" />
-  </div>
+  <v-card class="mt-9 mx-auto" width="400" :loading="isLoading">
+    <v-card-title>Pets</v-card-title>
+    <v-card-text>
+      <PetParent :items="pets" :isLoading="isLoading" />
+    </v-card-text>
+  </v-card>
 </template>
 
 <script>
@@ -34,17 +36,3 @@ export default {
   }
 }
 </script>
-
-<style lang="postcss" module>
-.pet {
-  width: 343px;
-  margin: 0 auto;
-  padding-top: 10vh;
-
-  & h1 {
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 16px;
-  }
-}
-</style>
