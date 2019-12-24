@@ -2,7 +2,7 @@ import { FETCH_CITY, FETCH_WEATHER } from "@/store/actions.type"
 import { FETCH_START, FETCH_END } from "@/store/mutations.type"
 import ApiService from "@/common/api.service"
 
-const uri = 'http://localhost:8080';
+const uri = 'http://115.28.131.190:8080/weather-api';
 
 const state = {
   city: [],
