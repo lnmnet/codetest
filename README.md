@@ -1,5 +1,5 @@
 # pets
-Code Test - Pets & Weather
+Code Test - Pets/Weather
 
 ### Project setup
 ```
